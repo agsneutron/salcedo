@@ -339,8 +339,8 @@ class CheckerData(models.Model):
         (CHECKER_TYPE_C, 'Sin Checador'),
     )
 
-    checks_entry = models.BooleanField(verbose_name="Checar Entrada", default=false)
-    checks_exit = models.BooleanField(verbose_name="Checar Salida", default=True)
+    checks_entry = models.BooleanField(verbose_name="Checa Entrada", default=True)
+    checks_exit = models.BooleanField(verbose_name="Checa Salida", default=True)
 
     # Foreign Keys.
     employee = models.ForeignKey(Employee, verbose_name='Empleado', null=False, blank=False)
