@@ -182,7 +182,7 @@ class Employee(models.Model):
     blood_type = models.IntegerField(choices=BLOOD_TYPE_CHOICES, default=BLOOD_TYPE_AP, verbose_name='Tipo Sanguíneo')
     driving_license_number = models.CharField(verbose_name="Número de Licencia de Conducir", max_length=20, null=False,
                                               blank=True)
-    driving_license_expiry_date = models.DateField(null=true, blank=true,
+    driving_license_expiry_date = models.DateField(null=false, blank=true,
                                                    verbose_name="Expiración de Licencia para Conducir")
 
     # Foreign Keys.
