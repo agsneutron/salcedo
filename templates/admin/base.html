@@ -157,6 +157,8 @@
                             </a>
 
                         </li>{% endcomment %}
+                        {% if perms.ERP  %}
+
                         <li class="dropdown
                                 {% if request.resolver_match.view_name in "admin:ERP_contratocontratista_add,admin:contractor-contract-list-view,admin:contractor-contract-detail,admin:ERP_contratocontratista_change,admin:ERP_contratocontratista_delete"|slice:"," %}{{ "active" }}{% endif %}">
                             <a href="#" class="dropdown-toggle"
@@ -209,6 +211,8 @@
                             </ul>
 
                         </li>
+
+                            {% endif %}
                         {% comment %}<li class="dropdown">
                         <a href="/admin/ERP/project/" class="dropdown-toggle animated fadeIn animation-delay-8"
                            data-toggle="dropdown"
@@ -219,6 +223,7 @@
                         </a>
 
                     </li>{% endcomment %}
+                      {% if perms.ERP  %}
                         <li class="dropdown
                                 {% if request.resolver_match.view_name in "admin:project-list-view,admin:ERP_project_add,admin:project-detail,admin:ERP_project_change,admin:project-dashboard,admin:concept-input-view,admin:ERP_estimate_add,admin:ERP_uploadedcatalogshistory_add,admin:estimate-view,admin:estimate-detail,admin:ERP_estimate_change,admin:ERP_progressestimate_change,admin:ERP_progressestimate_add,admin:ERP_uploadedinputexplotionshistory_add,admin:progressestimatelog-list-view,admin:progressestimatelog-detail,admin:ERP_progressestimatelog_change,admin:ERP_progressestimatelog_add"|slice:"," %}{{ "active" }}{% endif %}">
                             <a href="/admin/ERP/project/" class="dropdown-toggle"
@@ -296,6 +301,7 @@
                             </ul>
                         </li>
 
+                            {% endif %}
                         <li class="dropdown
                                 {% if request.resolver_match.view_name in "admin:HumanResources_jobprofile_add,admin:HumanResources_jobprofile_change,admin:HumanResources_jobprofile_changelist,admin:HumanResources_employee_add,admin:HumanResources_payrollgroup_add,admin:HumanResources_employee_changelist,admin:HumanResources_payrollperiod_add,admin:HumanResources_earningsdeductions_add,admin:HumanResources_uploadedemployeeassistancehistory_add,admin:HumanResources_employeeloan_add,admin:HumanResources_employeedropout_add,admin:HumanResources_employeehastag_changelist,admin:HumanResources_testapplication_changelist,admin:employee-detail,admin:HumanResources_jobprofile_add,admin:auth_user_add,admin:users-list-view,admin:users-detail,admin:auth_user_change,admin:accesstoproject-list-view,admin:ERP_accesstoproject_add,admin:auth_user_delete,admin:HumanResources_payrollgroup_changelist,admin:HumanResources_payrollgroup_add,admin:HumanResources_payrollperiod_add,admin:HumanResources_payrollperiod_changelist,admin:HumanResources_payrolltype_add,admin:HumanResources_payrolltype_changelist,admin:HumanResources_earningsdeductions_add,admin:HumanResources_earningsdeductions_changelist,admin:HumanResources_uploadedemployeeassistancehistory_add,admin:HumanResources_uploadedemployeeassistancehistory_changelist,admin:HumanResources_employeeloan_add,admin:HumanResources_employeeloan_changelist,admin:HumanResources_employeedropout_add,admin:HumanResources_employeedropout_changelist"|slice:"," %}{{ "active" }}{% endif %}">
                             {% if perms.auth.change_user or  perms.HumanResources.change_payrollperiod or perms.HumanResources.change_employee %}
@@ -489,7 +495,7 @@
 
                             </ul>
                         </li>
-
+                        {% if perms.ERP  %}
                         <li id="op_reportes" class="dropdown {% if request.resolver_match.view_name in "Reporting:report"|slice:"," %}{{ "active" }}{% endif %}">
                             <a href="/reporting/report" class="dropdown-toggle"
                                data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
@@ -499,6 +505,7 @@
                                 <i class="zmdi zmdi-chevron-down hidden-xs" style="opacity: 0;margin-left: -11px;"></i>
                             </a>
                         </li>
+                        {%endif%}
                     </ul>
                 </div>
                 <!-- navbar-collapse collapse -->
