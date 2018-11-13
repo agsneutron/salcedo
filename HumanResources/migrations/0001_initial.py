@@ -114,7 +114,9 @@ class Migration(migrations.Migration):
             name='DocumentType',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+               # ('name', models.CharField(choices=[('AN', 'Acta de Nacimiento'), ('CE', 'Comporbante de Estudios'), ('IO', 'Identificaci\xf3n'), ('CP', 'CURP'),('FD', 'Fotograf\xe9a Fachada del Domicilio'), ('CV', 'Curriculum Vitae'), ('RFC', 'Registro Federal de Contribuyentes'),('NI', 'Numero del IMSS'), ('CD', 'Comprobante de Domicilio'), ('UG', 'Ubicaci\xf3n GOOGLE MAPS'),('CR', 'Cartas de Recomendaci\xf3n'), ('CA', 'Carta de Antecedentes no Penales')], default='AN', max_length=1,verbose_name='Tipo de Documento')),
                 ('name', models.CharField(max_length=255, verbose_name='Tipo de Documento')),
+
             ],
             options={
                 'verbose_name': 'Tipo de Documento',

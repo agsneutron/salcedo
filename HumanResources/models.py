@@ -182,7 +182,7 @@ class Employee(models.Model):
     blood_type = models.IntegerField(choices=BLOOD_TYPE_CHOICES, default=BLOOD_TYPE_AP, verbose_name='Tipo Sanguíneo')
     driving_license_number = models.CharField(verbose_name="Número de Licencia de Conducir", max_length=20, null=False,
                                               blank=True)
-    driving_license_expiry_date = models.DateField(null=false, blank=true,
+    driving_license_expiry_date = models.DateField(null=False, blank=True,
                                                    verbose_name="Expiración de Licencia para Conducir")
 
     # Foreign Keys.
@@ -398,6 +398,40 @@ class EmployeeDocument(models.Model):
 
 # Employee Document Type.
 class DocumentType(models.Model):
+
+    # DOCUMENT_TYPE_ACTAN = 'AN'
+    # DOCUMENT_TYPE_COMPROBANTEDE = 'CE'
+    # DOCUMENT_TYPE_IDENTIFIOFIC = 'IO'
+    # DOCUMENT_TYPE_CURP = 'CP'
+    # DOCUMENT_TYPE_FOTODOMICI = 'FD'
+    # DOCUMENT_TYPE_CURRICULUMV = 'CV'
+    # DOCUMENT_TYPE_REGISTROFC = 'RFC'
+    # DOCUMENT_TYPE_NUMEROIMSS = 'NI'
+    # DOCUMENT_TYPE_COMPROBANTEDD = 'CD'
+    # DOCUMENT_TYPE_UBICACIONGPS = 'UG'
+    # DOCUMENT_TYPE_CARTARECOMEN = 'CR'
+    # DOCUMENT_TYPE_CARTAANTECEDE = 'CA'
+    #
+    # DOCUMENT_TYPE_CHOICES = (
+    #
+    #     (DOCUMENT_TYPE_ACTAN, 'Acta de Nacimiento'),
+    #     (DOCUMENT_TYPE_CARTAANTECEDE, 'Comprobante de Estudios'),
+    #     (DOCUMENT_TYPE_IDENTIFIOFIC, 'Identificación Oficial'),
+    #     (DOCUMENT_TYPE_CURP, 'CURP'),
+    #     (DOCUMENT_TYPE_FOTODOMICI, 'Fotografía Fachada del Domicilio'),
+    #     (DOCUMENT_TYPE_CURRICULUMV, 'Curriculum Vitae'),
+    #     (DOCUMENT_TYPE_REGISTROFC, 'Rgistro Federal de Contribuyentes (R.F.C.)'),
+    #     (DOCUMENT_TYPE_NUMEROIMSS, 'Número del IMSS'),
+    #     (DOCUMENT_TYPE_COMPROBANTEDD, 'Comprobante de Domicilio'),
+    #     (DOCUMENT_TYPE_UBICACIONGPS, 'Ubicación GOOGLE MAPS'),
+    #     (DOCUMENT_TYPE_CARTARECOMEN, 'Cartas de Recomendación'),
+    #     (DOCUMENT_TYPE_CARTAANTECEDE, 'Carta de Antecedentes no Penales'),
+    #
+    # )
+    #
+    # name = models.CharField(max_length=1, choices=DOCUMENT_TYPE_CHOICES, default=DOCUMENT_TYPE_ACTAN,
+    #                                   verbose_name='Tipo de Documento')
+
     name = models.CharField(verbose_name="Tipo de Documento", max_length=255, null=False, blank=False, unique=False)
 
     def __str__(self):
